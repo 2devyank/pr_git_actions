@@ -8,9 +8,6 @@ jobs:
   comment-with-actions:
     runs-on: ubuntu-latest
     steps: 
-      - name: "dump github context"
-        run: echo '${{ toJSON(github.event.issue.number) }}' | jq
-        shell: bash
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v3
         with:
@@ -33,6 +30,7 @@ jobs:
             -f body='
             Comment but from api call not action
             '
+            
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORGANIZATION: ${{ github.event.organization }}
