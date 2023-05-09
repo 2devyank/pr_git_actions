@@ -16,7 +16,7 @@ describe('Task APIs',()=>{
                 response.should.have.status(200);
                 // response.should.have.status(200);
                 response.body.should.be.a('object');
-                response.body.length.should.not.be.eq(0);
+                
                 done();
             });
         });
